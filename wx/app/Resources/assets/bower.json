@@ -1,0 +1,21 @@
+{
+  "name": "wx",
+  "homepage": "https://github.com/nvweb/wx",
+  "authors": [
+    "Hailong Zhao <hailongz@nvidia.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fingerprintjs2": "^1.4.1",
+    "handlebars": "^4.0.5"
+  }
+}

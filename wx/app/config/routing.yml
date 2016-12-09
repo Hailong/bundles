@@ -1,0 +1,76 @@
+nvidia_quick_qr_code:
+    resource: "@NvidiaQuickQRCodeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+nvidia_we_chat_jssdk:
+    resource: "@NvidiaWeChatJSSDKBundle/Resources/config/routing.yml"
+    prefix:   /
+
+nvidia_we_chat_backend:
+    resource: "@NvidiaWeChatBackendBundle/Resources/config/routing.yml"
+    prefix:   /
+
+dashboard_api:
+    resource: "@DashboardApiBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+wise_share:
+    resource: "@WiseShareBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+gpu_education_center:
+    path: /article/gpu-education-center-2016
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    static/gpu_education_center_2016.html.twig
+
+gpu_education_center_for_debugging:
+    path: /article/gpu-education-center-2016_for_debugging
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    static/gpu_education_center_2016_for_debugging.html.twig
+
+gpu_cuda_invitation:
+    path: /article/gtc-cuda-invitation
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    static/gtc_cuda_invitation.html.twig
+
+gtc_deep_learning_invitation:
+    path: /article/gtc-deep-learning-invitation
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    static/gtc_deep_learning_invitation.html.twig
+
+gpu_acc_ai_research:
+    path: /article/gpu-acc-ai-research
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    static/gpu_acc_ai_research.html.twig
+
+dashboard_demo:
+    path: /s/dashboard/
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    dashboard/demo.html
+dashboard_demo_shares:
+    path: /s/dashboard/shares
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    dashboard/demo.html
+
+mautic_js:
+    path: /mtc.js
+    defaults:
+        _controller: MauticStubBundle:CoreJs:index
+
+mautic_page_tracker:
+    path: /mtracking.gif
+    defaults:
+        _controller: MauticStubBundle:PagePublic:trackingImage

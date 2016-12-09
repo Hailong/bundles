@@ -1,0 +1,3 @@
+nvidia_we_chat_jssdk_homepage:
+    path:     /share.js
+    defaults: { _controller: NvidiaWeChatJSSDKBundle:Default:index }

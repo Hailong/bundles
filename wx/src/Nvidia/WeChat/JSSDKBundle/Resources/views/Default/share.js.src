@@ -1,0 +1,167 @@
+(function() {
+    if (typeof WeChatJSLoader == 'undefined') {
+
+        var og = {
+            title       : '',
+            type        : '',
+            image       : '',
+            url         : '',
+            audio       : '',
+            description : '',
+            determiner  : '',
+            locale      : '',
+            locale      : '',
+            site_name   : '',
+            video       : ''
+        };
+
+        var metaTags = document.getElementsByTagName("meta");
+
+        for (var i = 0; i < metaTags.length; i++) {
+            var tag = metaTags[i];
+            var property = tag.getAttribute('property');
+
+            if (property) {
+                if (property.indexOf('og:') == 0) {
+                    var content = tag.getAttribute('content');
+
+                    if (content) {
+                        og[property.substring(3)] = content;
+                    }
+                }
+            }
+        }
+
+        if (!og.image) {
+            var imgTags = document.getElementsByTagName("img");
+
+            for (var i = 0; i < imgTags.length; i++) {
+                var tag = imgTags[i];
+                var style = window.getComputedStyle(tag);
+
+                if (style.display === 'none' && tag.getAttribute('src')) {
+                    og.image = tag.getAttribute('src');
+                    break;
+                }
+            }
+        }
+
+        var wxType = 'link';
+        var dataUrl = '';
+        if (og.type.indexOf('music') == 0) {
+            wxType = 'music';
+            dataUrl = og.audio;
+        } else if (og.type.indexOf('video') == 0) {
+            wxType = 'video';
+            dataUrl = og.video;
+        }
+
+        var callbacks = {};
+
+        window.WeChatJSLoader = {
+            onShare: function(callback) {
+                callbacks.onShare = callback;
+            },
+            onGetShareUrl: function(callback) {
+                callbacks.onGetShareUrl = callback;
+            }
+        };
+
+        function onShare(source, target, status) {
+            if (typeof callbacks.onShare == 'function') {
+                callbacks.onShare(source, target, status, getShareUrl(), og.title, og.image);
+            }
+        }
+
+        function getShareUrl() {
+            if (typeof callbacks.onGetShareUrl == 'function') {
+                return callbacks.onGetShareUrl();
+            } else {
+                return og.url;
+            }
+        }
+
+        var head = document.getElementsByTagName('head')[0];
+
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = window.location.protocol + '//res.wx.qq.com/open/js/jweixin-1.0.0.js';
+
+        script.onload = function() {
+
+            wx.config(TWIG_PLACEHOLDER);
+
+            wx.ready(function(){
+                // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+
+                wx.onMenuShareTimeline({
+                    title  : og.title, // 分享标题
+                    link   : getShareUrl(), // 分享链接
+                    imgUrl : og.image, // 分享图标
+                    success: function () {
+                        onShare('wx', 'timeline', 'success');
+                    },
+                    cancel: function () {
+                        onShare('wx', 'timeline', 'cancel');
+                    }
+                });
+
+                wx.onMenuShareAppMessage({
+                    title  : og.title, // 分享标题
+                    desc   : og.description, // 分享描述
+                    link   : getShareUrl(), // 分享链接
+                    imgUrl : og.image, // 分享图标
+                    type   : wxType, // 分享类型,music、video或link，不填默认为link
+                    dataUrl: dataUrl, // 如果type是music或video，则要提供数据链接，默认为空
+                    success: function () {
+                        onShare('wx', 'message', 'success');
+                    },
+                    cancel: function () {
+                        onShare('wx', 'message', 'cancel');
+                    }
+                });
+
+                wx.onMenuShareQQ({
+                    title  : og.title, // 分享标题
+                    desc   : og.description, // 分享描述
+                    link   : getShareUrl(), // 分享链接
+                    imgUrl : og.image, // 分享图标
+                    success: function () {
+                        onShare('wx', 'qq', 'success');
+                    },
+                    cancel: function () {
+                        onShare('wx', 'qq', 'cancel');
+                    }
+                });
+
+                wx.onMenuShareWeibo({
+                    title  : og.title, // 分享标题
+                    desc   : og.description, // 分享描述
+                    link   : getShareUrl(), // 分享链接
+                    imgUrl : og.image, // 分享图标
+                    success: function () {
+                        onShare('wx', 'weibo', 'success');
+                    },
+                    cancel: function () {
+                        onShare('wx', 'weibo', 'cancel');
+                    }
+                });
+
+                wx.onMenuShareQZone({
+                    title  : og.title, // 分享标题
+                    desc   : og.description, // 分享描述
+                    link   : getShareUrl(), // 分享链接
+                    imgUrl : og.image, // 分享图标
+                    success: function () {
+                        onShare('wx', 'qzone', 'success');
+                    },
+                    cancel: function () {
+                        onShare('wx', 'qzone', 'cancel');
+                    }
+                });
+            });
+        };
+
+        head.appendChild(script);
+    }
+})();

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'my-info' %}
+
+{% block title '我的个人信息' %}
+
+{% block main %}
+
+    <h2>我的个人信息</h2>
+
+    <div class="contact-info" style="margin-bottom: 1em;"></div>
+
+    <a class="btn btn-default btn-sm" href="{{ path('my_info_edit') }}" role="button">编辑</a>
+
+{% endblock %}
+
+{% block page_javascripts %}
+
+    <script id="contact-info-template" type="text/x-handlebars-template">
+        {% verbatim %}
+            <div>姓名: {{lastName}}{{firstName}}</div>
+            <div>电子邮件: {{email}}</div>
+            <div>手机号码: {{mobile}}</div>
+            <div>公司: {{company}}</div>
+            <div>职务: {{position}}</div>
+        {% endverbatim %}
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.post('/api/my/info', function(data) {
+                var template = Handlebars.compile($("#contact-info-template").html());
+                $(".contact-info").append(template(data));
+            })
+            .fail(function () {
+                window.location.replace("{{ path('my_info_edit') }}");
+            });
+        });
+    </script>
+
+{% endblock %}

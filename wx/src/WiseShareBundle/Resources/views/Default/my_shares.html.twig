@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'my-shares' %}
+
+{% block title 'GPU Education Center 2016' %}
+
+{% block main %}
+
+    <h2>我分享过的文章</h2>
+
+    <div class="shared-articles"></div>
+
+{% endblock %}
+
+{% block page_javascripts %}
+
+    <script id="article-template" type="text/x-handlebars-template">
+        {% verbatim %}
+            {{#each shares}}
+                <article class="post clearfix" style="margin-botton:1em;">
+                    <h3><a href="{{url}}">{{title}}</a></h3>
+                    <img style="float:left;margin-right:100px;width:90px;" src="{{imageUrl}}" alt="">
+                    <div style="margin-top:30px;"><span>阅读数:</span> {{readCount}}</div>
+                    <div><span>转发数:</span> {{sharedCount}}</div>
+                </article>
+            {{/each}}
+        {% endverbatim %}
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.post('/api/my/shares', function(data) {
+                var template = Handlebars.compile($("#article-template").html());
+                var context = {shares: data};
+                $(".shared-articles").append(template(context));
+            });
+        });
+    </script>
+
+{% endblock %}

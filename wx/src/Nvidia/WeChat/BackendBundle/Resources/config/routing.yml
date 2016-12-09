@@ -1,0 +1,19 @@
+nvidia_wechat_server_enterprise_solutions:
+    path:     /server/es
+    defaults: { _controller: NvidiaWeChatBackendBundle:EnterpriseSolutions:server }
+
+nvidia_wechat_management_enterprise_solutions_menus_view:
+    path:     /mgmt/es/menus/view
+    defaults: { _controller: NvidiaWeChatBackendBundle:EnterpriseSolutions:menus }
+
+nvidia_wechat_form_enterprise_solutions_welcome:
+    path:     /form/es/welcome
+    defaults: { _controller: NvidiaWeChatBackendBundle:EnterpriseSolutions:welcome }
+
+nvidia_wechat_form_enterprise_solutions_welcome_success:
+    path:     /form/es/welcome/success
+    defaults: { _controller: NvidiaWeChatBackendBundle:EnterpriseSolutions:success }
+
+nvidia_wechat_api_enterprise_solutions_explorer:
+    path:     /api/es/explorer
+    defaults: { _controller: NvidiaWeChatBackendBundle:EnterpriseSolutions:apiExplorer }

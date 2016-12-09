@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %} {% block body_id 'gpu_education_center_2016' %} {% block title 'GPU/CUDA 深度理解免费培训，现在开始报名啦！' %}
+{% block wx_share_title 'GPU/CUDA 深度理解免费培训，现在开始报名啦！' %} {% block wx_share_desc '当前人工智能、深度学习和自动驾驶的蓬勃发展，开启了GPU高性能计算的发展新的黄金时代。NVIDIA专注GPU/CUDA技术发展多年，在本届GTC大会开幕之前，我们针对GPU/CUDA最新技术趋势及应用，安排了干货满满的免费培训课程。'
+%} {% block wx_share_imgUrl 'http://images.nvidia.com/cn/wechat/gtc_invitation/wechat_image.png' %} {% block main %}
+
+<style>
+    h1, h2{
+        text-align:center;
+    }
+    .body-container #main h2{
+        transform: skewX(-30deg);
+        background: #76b900;
+        color: #fff;
+        margin:30px;
+        padding: 10px;
+    }
+    h2 span{
+      transform: skewX(30deg);
+      display: inline-block;
+    }
+</style>
+<h1>GPU/CUDA深度理解培训-邀请函！</h1>
+
+<h2><span>关于GPU/CUDA深度理解培训</span></h2>
+<p>当前人工智能、深度学习和自动驾驶的蓬勃发展，开启了GPU高性能计算的发展新的黄金时代。NVIDIA专注GPU/CUDA技术发展多年，在本届GTC大会开幕之前，我们针对GPU/CUDA<strong style="color:#76b900">最新</strong>技术趋势及应用，安排了干货满满的<strong style="color:#76b900">免费</strong>培训课程。通过培训，大家将获得以下知识：</p>
+
+<div class="row">
+    <div class="col-xs-12 col-md-6">
+        <ul>
+        <li>最新鲜的Pascal GPU架构</li>
+        <li>CUDA 8新的特性</li>
+        <li>GPU/CUDA性能分析和优化</li>
+        <li>GPU CUDA高端调试优化技巧</li>
+</ul>
+<br /><br />
+    </div>
+    <div class="col-xs-12 col-md-6">
+        <ul>
+
+<li>多GPU开发和MPI编程</li>
+<li>统一内存编址(unified memory)</li>
+<li>最新通信系统NV Link</li>
+<li>深度学习实现引擎GIE (GPU Inference Engine)</li>
+</ul>
+        </div>
+</div>
+
+<h2><span>培训讲师简介</span></h2>
+
+
+<div class="row">
+    <div class="col-xs-12 col-md-9">周斌， NVIDIA CUDA Fellow，BriSky创始人、CTO，中国科学技术大学信息科学技术学院客座研究员，拥有清华大学信息与通信工程学士、硕士、博士学位，以及乔治梅森大学计算机工程硕士学位。曾于NVIDIA任高级研发工程师，是GPU-version GRAPES模型的主要开发者，参与多个GPU相关研究项目，现专注于GPU平台上深度神经网络的研究。<br /><br /></div>
+    <div class="col-xs-12 col-md-3"><img src="http://images.nvidia.com/cn/wechat/gtc_invitation/zhoubin.png" /></div>
+</div>
+
+<h2><span>培训时间&地点</span></h2>
+
+<div class="row">
+    <div class="col-xs-12 col-md-6">            <table width="100%">
+                <tr>
+                    <td valign="top">时间:</td>
+                    <td valign="top">2016年9月12日<br /> 14:00 ~17:00</td>
+                </tr>
+                <tr>
+                    <td valign="top">地点:</td>
+                    <td valign="top">北京国际饭店<br /> 一层 多功能1A 教室</td>
+                </tr>
+            </table>
+            <br /><br /></div>
+    <div class="col-xs-12 col-md-6"><div align="center"><img src="http://images.nvidia.com/cn/wechat/gtc_invitation/map.png" style="width:100%"/></div></div>
+</div>
+
+
+<h2><span>报名方式</span></h2>
+
+<p>小伙伴们若是想知道GPU/CUDA有了哪些新的神技能，请将如下信息发送邮件到 <a href="mailto:emilyz@nvidia.com?subject=GPU/CUDA深度理解培训">emilyz@nvidia.com</a> 即可完成报名：
+    <ol type="a">
+        <li>姓名</li>
+        <li>联系电话</li>
+        <li>工作单位</li>
+        <li>从事CUDA开发的时间 （年or 月）</li>
+        <li> 研究/从事领域</li>
+    </ol>
+</p>
+<p align="center">
+难得的 <span style="color:#76b900; font-weight:bold; font-size:200%">免费</span> 关于GPU/CUDA最新技术及应用培训，快和小伙伴们约起来吧！<br />
+只有 <span style="color:#76b900; font-weight:bold; font-size:200%">48</span> 个席位，先到先得哦^^
+
+</p>
+
+{% endblock %}

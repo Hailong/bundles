@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body_id 'my-info-edit' %}
+
+{% block title '编辑我的个人信息' %}
+
+{% block main %}
+
+    <h2>编辑我的个人信息</h2>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+{% endblock %}

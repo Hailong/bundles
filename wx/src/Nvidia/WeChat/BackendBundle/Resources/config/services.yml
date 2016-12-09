@@ -1,0 +1,10 @@
+services:
+#    nvidia_we_chat_backend.example:
+#        class: Nvidia\WeChat\BackendBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
+    nvidia_we_chat_backend.cache:
+        class: Doctrine\Common\Cache\ApcuCache
+
+    nvidia_we_chat_backend.enterprise_solutions_server:
+        class: Nvidia\WeChat\BackendBundle\Server\EnterpriseSolutionsServer
+        arguments: ["@doctrine.orm.entity_manager", "@nvidia_we_chat_backend.cache", "wxxxxxxxxxxxxxxxxxxxxx", "aexxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "yCxxxxxxxxxxxxxxxxx"]

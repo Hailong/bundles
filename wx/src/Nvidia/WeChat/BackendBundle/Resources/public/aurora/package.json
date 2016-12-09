@@ -1,0 +1,22 @@
+{
+  "name": "aurora",
+  "version": "1.0.0",
+  "description": "Random pages created on surge.sh",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nvweb/aurora.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nvweb/aurora/issues"
+  },
+  "homepage": "https://github.com/nvweb/aurora#readme",
+  "dependencies": {
+    "semantic-ui": "^2.2.4"
+  }
+}

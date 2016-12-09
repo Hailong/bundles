@@ -1,0 +1,300 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>英伟达NVIDIA企业解决方案</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/nvidiawechatbackend/aurora/semantic/dist/semantic.min.css') }}?203d8d6a">
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>
+    window.jQuery || document.write("<script src=\"{{ asset('bundles/nvidiawechatbackend/aurora/js/vendor/jquery-1.12.0.min.js') }}\"><\/script>")
+    </script>
+    <script src="{{ asset('bundles/nvidiawechatbackend/aurora/semantic/dist/semantic.min.js') }}?203d8d6a"></script>
+    <style type="text/css">
+    body {
+        background-color: #ebebeb;
+        font-size: 4.5vw;
+    }
+
+    #wrapper {
+        /*margin-bottom: -14%;*/
+        width: 100%;
+        /*height: 100%;*/
+        /*min-height: 100%;*/
+        /*height: auto !important;*/
+        padding-bottom: 16%;
+    }
+
+    #top,
+    #message,
+    #formtop {
+        line-height: 0;
+    }
+
+    #top > img,
+    #message > img,
+    #formtop > img {
+        width: 100%;
+    }
+
+    #top {
+        position: relative;
+    }
+
+    #top > .time {
+        position: absolute;
+        top: 58%;
+        width: 100%;
+        text-align: center;
+        font-family: Sans-serif;
+        font-size: 3.3vw;
+        font-weight: lighter;
+        color: #fff;
+    }
+
+    #message {
+        background: #ebebeb url({{ asset('bundles/nvidiawechatbackend/aurora/img/es_welcome_message.png') }}) left top/contain repeat-y border-box;
+    }
+
+    #message > .content {
+        margin: -12% 18% 0;
+        padding-top: 3%;
+        width: 61%;
+    }
+
+    #formwrapper {
+        margin-left: 15.8%;
+        width: 65.4%;
+        padding: 4% 2%;
+        border-radius: 3px 3px 3px 3px;
+        -moz-border-radius: 3px 3px 3px 3px;
+        -webkit-border-radius: 3px 3px 3px 3px;
+        border: 1px solid #dbdbdb;
+        background-color: #fff;
+    }
+
+    #bottom {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        border-top: 1px solid #d8d8d8;
+        background-color: #f4f4f4;
+    }
+
+    #bottom > .button {
+        position: relative;
+        line-height: 0;
+        width: 27%;
+        margin-left: auto;
+        margin-right: auto;
+        color: #fff;
+    }
+
+    #bottom > .button > img {
+        width: 100%;
+    }
+
+    #bottom > .button > .text {
+        position: absolute;
+        font-size: 4vw;
+        top: 51%;
+        left: 35%;
+    }
+
+    .mauticform-select .ui.fluid.dropdown.selection.multiple .menu.transition.visible {
+        max-height: inherit;
+    }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="ui dimmer">
+        <div class="ui medium text loader">请稍后 ...</div>
+    </div>
+    <div id="wrapper">
+        <div id="top">
+            <img src="{{ asset('bundles/nvidiawechatbackend/aurora/img/es_welcome_top_1.png') }}" alt="">
+            <div class="time">{{ time }}</div>
+        </div>
+        <div id="message">
+            <img src="{{ asset('bundles/nvidiawechatbackend/aurora/img/es_welcome_top_2.png') }}" alt="">
+            <div class="content">
+                <p>让我们共同创想AI未来！</p>
+                <p>请填写您的信息</p>
+            </div>
+        </div>
+        <div id="formtop">
+            <img src="{{ asset('bundles/nvidiawechatbackend/aurora/img/es_welcome_form_top.png') }}" alt="">
+        </div>
+        <div id="formmiddle">
+            <div id="formwrapper">
+                <div id="mauticform_wrapper_wxeswelcomeform" class="mauticform_wrapper">
+                    <form class="ui large form" autocomplete="false" role="form" method="post" action="http://www.marketingneat.com/form/submit?formId=32" id="mauticform_wxeswelcomeform" data-mautic-form="wxeswelcomeform">
+                        <div class="mauticform-error" id="mauticform_wxeswelcomeform_error"></div>
+                        <div class="mauticform-message" id="mauticform_wxeswelcomeform_message"></div>
+                        <div class="mauticform-innerform">
+
+                            
+                          <div class="mauticform-page-wrapper mauticform-page-1" data-mautic-form-page="1">
+
+                            <div id="mauticform_wxeswelcomeform_cumpl"  data-validate="cumpl" data-validation-type="text" class="mauticform-row mauticform-text mauticform-field-1 mauticform-required field">
+                                <input placeholder="姓名" id="mauticform_input_wxeswelcomeform_cumpl" name="mauticform[cumpl]" value="" class="mauticform-input" type="text" />
+                            </div>
+
+                            <div id="mauticform_wxeswelcomeform_rseft"  data-validate="rseft" data-validation-type="text" class="mauticform-row mauticform-text mauticform-field-2 mauticform-required field">
+                                <input placeholder="公司" id="mauticform_input_wxeswelcomeform_rseft" name="mauticform[rseft]" value="" class="mauticform-input" type="text" />
+                            </div>
+
+                            <div id="mauticform_wxeswelcomeform_yi_xia_na_xie_shi_nin_gan"  data-validate="yi_xia_na_xie_shi_nin_gan" data-validation-type="select" class="mauticform-row mauticform-select mauticform-field-5 mauticform-required field">
+                                <select id="mauticform_input_wxeswelcomeform_yi_xia_na_xie_shi_nin_gan" name="mauticform[yi_xia_na_xie_shi_nin_gan]" value="" class="mauticform-selectbox ui fluid dropdown">
+                                    <option value="">行业</option>
+                                    <option value="IT服务">IT服务</option>
+                                    <option value="国防/政府">国防/政府</option>
+                                    <option value="建筑设计、工程设计和施工">建筑设计、工程设计和施工</option>
+                                    <option value="教育/研究机构">教育/研究机构</option>
+                                    <option value="金融">金融</option>
+                                    <option value="零售行业">零售行业</option>
+                                    <option value="媒体/娱乐制造业">媒体/娱乐制造业</option>
+                                    <option value="能源及电信行业">能源及电信行业</option>
+                                    <option value="汽车及运输">汽车及运输</option>
+                                    <option value="石油天然气和能源行业">石油天然气和能源行业</option>
+                                    <option value="医疗、生命科学">医疗、生命科学</option>
+                                    <option value="制造业">制造业</option>
+                                    <option value="其他">其他</option>
+                                </select>
+                            </div>
+
+                            <div id="mauticform_wxeswelcomeform_nin_jin_qi_shi_fou_you_ca"  data-validate="nin_jin_qi_shi_fou_you_ca" data-validation-type="select" class="mauticform-row mauticform-select mauticform-field-6 mauticform-required field">
+                                <select id="mauticform_input_wxeswelcomeform_nin_jin_qi_shi_fou_you_ca" name="mauticform[nin_jin_qi_shi_fou_you_ca]" value="" class="mauticform-selectbox ui fluid dropdown">
+                                    <option value="">职位</option>
+                                    <option value="IT部门负责人">IT部门负责人</option>
+                                    <option value="IT管理员/系统管理员">IT管理员/系统管理员</option>
+                                    <option value="采购经理">采购经理</option>
+                                    <option value="电影/视频剪辑">电影/视频剪辑</option>
+                                    <option value="高级顾问">高级顾问</option>
+                                    <option value="工程师">工程师</option>
+                                    <option value="工业设计师">工业设计师</option>
+                                    <option value="管理层">管理层</option>
+                                    <option value="开发人员/编程人员">开发人员/编程人员</option>
+                                    <option value="平面设计师">平面设计师</option>
+                                    <option value="市场部负责人">市场部负责人</option>
+                                    <option value="销售代表">销售代表</option>
+                                    <option value="销售工程师">销售工程师</option>
+                                    <option value="学生/研究生">学生/研究生</option>
+                                    <option value="研究机构科研人员">研究机构科研人员</option>
+                                    <option value="专家">专家</option>
+                                    <option value="其他">其他</option>
+                                </select>
+                            </div>
+
+                            <div id="mauticform_wxeswelcomeform_email1"  data-validate="email1" data-validation-type="email" class="mauticform-row mauticform-email mauticform-field-3 mauticform-required field">
+                                <input placeholder="邮箱" id="mauticform_input_wxeswelcomeform_email1" name="mauticform[email1]" value="" class="mauticform-input" type="email" />
+                            </div>
+
+                            <div id="mauticform_wxeswelcomeform_yarne"  class="mauticform-row mauticform-tel mauticform-field-4 field">
+                                <input placeholder="电话（可选）" id="mauticform_input_wxeswelcomeform_yarne" name="mauticform[yarne]" value="" class="mauticform-input" type="tel" />
+                            </div>
+
+                            <input id="mauticform_input_wxeswelcomeform_oid" name="mauticform[oid]" value="{{ openid }}" class="mauticform-hidden" type="hidden" />
+                            <input id="mauticform_input_wxeswelcomeform_nickname" name="mauticform[nickname]" value="{{ nickname }}" class="mauticform-hidden" type="hidden" />
+                            <input id="mauticform_input_wxeswelcomeform_avatar" name="mauticform[avatar]" value="{{ avatar }}" class="mauticform-hidden" type="hidden" />
+
+                          </div>
+                        </div>
+
+                        <input type="hidden" name="mauticform[formId]" id="mauticform_wxeswelcomeform_id" value="32"/>
+                        <input type="hidden" name="mauticform[return]" id="mauticform_wxeswelcomeform_return" value=""/>
+                        <input type="hidden" name="mauticform[formName]" id="mauticform_wxeswelcomeform_name" value="wxeswelcomeform"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bottom">
+        <div class="button">
+            <img src="{{ asset('bundles/nvidiawechatbackend/aurora/img/es_u_welcome_submit.png') }}" alt="">
+            <div class="text">提交</div>
+        </div>
+    </div>
+    <div style="display:none;">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+    <script type="text/javascript">
+    /** This section is only needed once per page if manually copying **/
+    if (typeof MauticSDKLoaded == 'undefined') {
+        var MauticSDKLoaded = true;
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'http://www.marketingneat.com/media/js/mautic-form.js';
+        script.onload = function() {
+            MauticSDK.onLoad();
+        };
+        head.appendChild(script);
+        var MauticDomain = 'http://www.marketingneat.com';
+        var MauticLang = {
+            'submittingMessage': "请稍后..."
+        }
+    }
+    var MauticFormCallback = {
+        wxeswelcomeform: {
+            onResponse: function(response) {
+                setTimeout(function() {
+                    $('.ui.dimmer').removeClass('active');
+                }, 800);
+                $('#mauticform_wxeswelcomeform .mauticform-innerform').transition('fly left');
+                $('#bottom').transition('drop');
+                // Set our UI redirect to false
+                response.redirect = false;
+
+                $('form[name="welcome"]').submit();
+            },
+            onValidateEnd: function(formValid) {
+                if (formValid) {
+                    $('.ui.dimmer').addClass('active');
+                }
+            }
+        }
+    };
+    </script>
+    <script>
+    $(document).ready(function() {
+        $('.ui.dropdown').dropdown();
+        $('#mauticform_wxeswelcomeform').form({
+            fields: {
+                mauticform_input_wxeswelcomeform_cumpl: 'empty',
+                mauticform_input_wxeswelcomeform_rseft: 'empty',
+                mauticform_input_wxeswelcomeform_yi_xia_na_xie_shi_nin_gan: 'empty',
+                mauticform_input_wxeswelcomeform_nin_jin_qi_shi_fou_you_ca: 'empty',
+                mauticform_input_wxeswelcomeform_email1: 'empty',
+            }
+        });
+
+        $('#bottom > .button').click(function() {
+            $('#mauticform_wxeswelcomeform').submit();
+        });
+    });
+    </script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?4a5c21d7c451028b44c9e84c227ae432";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</body>
+
+</html>

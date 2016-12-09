@@ -1,0 +1,10 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+@green                  : #76b900;
+@primaryColor           : @green;
+@importGoogleFonts      : false;
+@fontName               : 'Trebuchet MS';
+@focusedFormBorderColor : #b8da7e;
+@focusedFormMutedBorderColor: #b8da7e;

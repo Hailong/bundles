@@ -1,0 +1,142 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>英伟达NVIDIA企业解决方案</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/nvidiawechatbackend/aurora/semantic/dist/semantic.min.css') }}?203d8d6a">
+    <style type="text/css">
+    body {
+        background-color: #ebebeb;
+        font-size: 4.5vw;
+    }
+
+    #wrapper {
+        /*margin-bottom: -14%;*/
+        width: 100%;
+        /*height: 100%;*/
+        /*min-height: 100%;*/
+        /*height: auto !important;*/
+        padding-bottom: 16%;
+    }
+
+    #top,
+    #message,
+    #formtop {
+        line-height: 0;
+    }
+
+    #top > img,
+    #message > img,
+    #formtop > img {
+        width: 100%;
+    }
+
+    #top {
+        position: relative;
+    }
+
+    #top > .time {
+        position: absolute;
+        top: 58%;
+        width: 100%;
+        text-align: center;
+        font-family: Sans-serif;
+        font-size: 3.3vw;
+        font-weight: lighter;
+        color: #fff;
+    }
+
+    #message {
+        background: #ebebeb url({{ asset('bundles/nvidiawechatbackend/aurora/img/es_welcome_message.png') }}) left top/contain repeat-y border-box;
+    }
+
+    #message > .content {
+        margin: -12% 18% 0;
+        padding-top: 3%;
+        width: 61%;
+    }
+
+    #formwrapper {
+        margin-left: 15.8%;
+        width: 65.4%;
+        padding: 4% 2%;
+        border-radius: 3px 3px 3px 3px;
+        -moz-border-radius: 3px 3px 3px 3px;
+        -webkit-border-radius: 3px 3px 3px 3px;
+        border: 1px solid #dbdbdb;
+        background-color: #fff;
+    }
+
+    #bottom {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        border-top: 1px solid #d8d8d8;
+        background-color: #f4f4f4;
+    }
+
+    #bottom > .button {
+        position: relative;
+        line-height: 0;
+        width: 27%;
+        margin-left: auto;
+        margin-right: auto;
+        color: #fff;
+    }
+
+    #bottom > .button > img {
+        width: 100%;
+    }
+
+    #bottom > .button > .text {
+        position: absolute;
+        font-size: 4vw;
+        top: 51%;
+        left: 35%;
+    }
+
+    .mauticform-select .ui.fluid.dropdown.selection.multiple .menu.transition.visible {
+        max-height: inherit;
+    }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div id="wrapper">
+        <div id="top">
+            <img src="{{ asset('bundles/nvidiawechatbackend/aurora/img/es_welcome_top_1.png') }}" alt="">
+            <div class="time">{{ time }}</div>
+        </div>
+        <div id="message">
+            <img src="{{ asset('bundles/nvidiawechatbackend/aurora/img/es_welcome_top_2.png') }}" alt="">
+            <div class="content">
+                <p>您的信息已经提交成功</p>
+                <p>再次感谢您的参与！</p>
+            </div>
+        </div>
+        <div id="formtop">
+            <img src="{{ asset('bundles/nvidiawechatbackend/aurora/img/es_welcome_form_top.png') }}" alt="">
+        </div>
+    </div>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?4a5c21d7c451028b44c9e84c227ae432";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</body>
+
+</html>

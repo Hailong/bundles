@@ -1,0 +1,8 @@
+var containers = document.getElementsByClassName('quick-qr-code');
+
+for (var i = 0; i < containers.length; i++) {
+    var img = document.createElement('img');
+    img.src = '{{ img_url|raw }}';
+
+    containers[i].appendChild(img);
+}

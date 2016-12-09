@@ -1,0 +1,177 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Youku Embed Testing</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css?8307a8f9">
+    <style type="text/css">
+    body {
+        /*background: url(//www.nvidia.cn/content/includes/redesign2010/images/redesign10/background_gradient.gif) repeat-x;*/
+        background-color: #333;
+    }
+    
+    body > .grid {
+        height: 100%;
+    }
+    
+    .image {
+        margin-top: -100px;
+    }
+    
+    .column {
+        max-width: 450px;
+    }
+    
+    .mauticform-label.general-field {
+        display: none !important;
+    }
+    
+    .mauticform-label {
+        text-align: left !important;
+    }
+    
+    .mauticform_wrapper {
+        padding-top: 0.5em;
+    }
+    
+    .mauticform-select .ui.fluid.dropdown.selection.multiple .menu.transition.visible {
+        max-height: inherit;
+    }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="ui center aligned grid">
+        <div class="column">
+            <div style="padding: 20px;">
+                <h2 class="ui green image header">
+                    <img style="width: inherit;" src="//www.nvidia.cn/content/includes/redesign2010/images/redesign10/nvidia_logo.png" class="image">
+                    <div class="content"><br>
+                        Emebedding Youku video with JS API ...
+                    </div>
+                </h2>
+                <div class="ui segment" style="background-color: #76b900;">
+                    <div id="youkuplayer" style="width:240px;height:200px"></div>
+                    <script type="text/javascript" src="http://player.youku.com/jsapi"></script>
+                    <script type="text/javascript">
+                    player = new YKU.Player('youkuplayer', {
+                        styleid: '0',
+                        client_id: '35f1191d49b6a8e1',
+                        vid: 'XMTY0MzEwODg3Mg==',
+                        prefer: 'h5',
+                        autoplay: true
+                    });
+                    </script>
+                </div>
+                <h2 class="ui green image header">
+                    <div class="content"><br>
+                        Embedding Youku video with iframe ...
+                    </div>
+                </h2>
+                <div class="ui segment" style="background-color: #76b900;">
+                    <iframe height=249 width=255 src='http://player.youku.com/embed/XMTY0MzEwODg3Mg==' frameborder=0 'allowfullscreen'></iframe>
+                </div>
+                <h2 class="ui green image header">
+                    <div class="content"><br>
+                        Tencent HTML embedding ...
+                    </div>
+                </h2>
+                <div class="ui segment" style="background-color: #76b900;">
+                    <embed src="http://static.video.qq.com/TPout.swf?vid=g0315hjyh9e&auto=0" allowFullScreen="true" quality="high" width="240" height="200" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+                </div>
+                <h2 class="ui green image header">
+                    <div class="content"><br>
+                        Tencent iframe embedding ...
+                    </div>
+                </h2>
+                <div class="ui segment" style="background-color: #76b900;">
+                    <iframe frameborder="0" width="320" height="249" src="http://v.qq.com/iframe/player.html?vid=g0315hjyh9e&tiny=0&auto=0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    /** This section is only needed once per page if manually copying **/
+    if (typeof MauticSDKLoaded == 'undefined') {
+        var MauticSDKLoaded = true;
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'http://www.marketingneat.com/media/js/mautic-form.js';
+        script.onload = function() {
+            MauticSDK.onLoad();
+        };
+        head.appendChild(script);
+        var MauticDomain = 'http://www.marketingneat.com';
+        var MauticLang = {
+            'submittingMessage': "请稍后..."
+        }
+    }
+    var MauticFormCallback = {
+        wrc2016: {
+            onResponse: function(response) {
+                setTimeout(function() {
+                    $('#mauticform_wrc2016').removeClass('loading');
+                }, 800);
+                $('#mauticform_wrc2016 .mauticform-innerform').transition('swing left');
+                setTimeout(function() {
+                    $('#mauticform_wrc2016 .mauticform-message').transition('pulse');
+                }, 1600);
+                // Set our UI redirect to false
+                response.redirect = false;
+            },
+            onValidateEnd: function(formValid) {
+                if (formValid) {
+                    $('#mauticform_wrc2016').addClass('loading');
+                }
+            }
+        }
+    };
+    </script>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>
+    window.jQuery || document.write('<script src="/js/vendor/jquery-1.12.0.min.js"><\/script>')
+    </script>
+    <script src="/semantic/dist/semantic.min.js?8307a8f9"></script>
+    <script>
+    $(document).ready(function() {
+        $('.ui.dropdown').dropdown();
+        $('#mauticform_wrc2016').form({
+            fields: {
+                mauticform_input_wrc2016_nin_de_gong_zuo_zhi_nengk: 'empty',
+                mauticform_input_wrc2016_yi_xia_na_xie_shi_nin_gan: 'empty',
+                mauticform_input_wrc2016_nin_zheng_zai_shi_yong_hu: 'empty',
+                mauticform_input_wrc2016_nin_zui_gan_xing_qu_de_ji: 'empty',
+                mauticform_input_wrc2016_nin_dui_ji_yu_shen_du_xue: 'empty',
+                mauticform_input_wrc2016_nin_hui_fou_dui_shi_jie_s: 'empty',
+                mauticform_input_wrc2016_nin_jin_qi_shi_fou_you_ca: 'empty',
+                mauticform_input_wrc2016_nvidia: 'empty',
+                mauticform_input_wrc2016_cumpl: 'empty',
+                mauticform_input_wrc2016_rseft: ['empty'],
+                mauticform_input_wrc2016_doarc: ['empty'],
+                mauticform_input_wrc2016_email1: 'empty',
+                mauticform_input_wrc2016_yarne: ['minLength[11]', 'empty']
+            }
+        });
+    });
+    </script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?4a5c21d7c451028b44c9e84c227ae432";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</body>
+
+</html>
